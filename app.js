@@ -3,17 +3,20 @@ import chalk from 'chalk';
 import createDebug from 'debug'
 const debug = createDebug('app')
 import morgan from 'morgan';
+import path from 'path';
 const app = express();
 const port = 3000;
+const __dirname = path.resolve();
 
 app.use(morgan('combined'));
-app.get("/",(req,res)=>{
+app.use(express.static(path.join(__dirname, "/public/")))
+app.get("/", (req, res) => {
 
     res.send('Hello Natthawut.31');
 
 })
 
-app.listen(port,()=>{
+app.listen(port, () => {
 
     console.log("Listening on port" + chalk.green(port));
 })
