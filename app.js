@@ -5,7 +5,7 @@ const debug = createDebug('app')
 import morgan from 'morgan';
 import path from 'path';
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT
 const __dirname = path.resolve();
 
 app.use(morgan('combined'));
@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 
 })
 
-app.listen(port, () => {
+app.listen(PORT, () => {
 
-    console.log("Listening on port" + chalk.green(port));
+    console.log("Listening on port" + chalk.green(PORT));
 })
