@@ -10,9 +10,13 @@ const __dirname = path.resolve();
 
 app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname, "/public/")))
+
+app.set("views","./src/views");
+app.set("view engine","ejs");
+
 app.get("/", (req, res) => {
 
-    res.send('Hello Natthawut.31');
+    res.render('index',{username:'natthawut'});
 
 })
 
