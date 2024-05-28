@@ -1,0 +1,24 @@
+{
+    "products": [
+        {
+            "producttitle": "กำไลข้อมือ1",
+            "description": "กำไลเงิน",
+            "price": 500
+        },
+        {
+            "producttitle": "กำไลข้อมือ2",
+            "description": "กำไลทอง",
+            "price": 800
+        },
+        {
+            "producttitle": "กำไลข้อมือ3",
+            "description": "กำไลเพชร",
+            "price": 1000
+        },
+        {
+            "producttitle": "กำไลข้อมือ4",
+            "description": "กำไลทองแดง",
+            "price": 300
+        }
+    ]
+}
