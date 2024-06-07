@@ -4,8 +4,9 @@ import createDebug from 'debug'
 const debug = createDebug('app')
 import morgan from 'morgan';
 import path from 'path';
+import fs from "fs";
 const app = express();
-const products = require("./data/products.json");
+const products = JSON.parse(fs.readFileSync("./data/products.json"));
 const PORT = process.env.PORT
 const __dirname = path.resolve();
 
