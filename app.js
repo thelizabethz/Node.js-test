@@ -19,13 +19,17 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
 productRouter.route("/").get((req, res) => {
-    res.render("products", 
+    res.render("products",{ 
         products,
+    }
     );
 });
 
-productRouter.route("/1").get((req, res) => {
-    res.send("Hello I'm Product 1");
+productRouter.route("/:id").get((req, res) => {
+    const id = req.params.id;
+    res.render("product",{
+        product: products[id],
+    })
 });
 
 app.use("/products", productRouter)
