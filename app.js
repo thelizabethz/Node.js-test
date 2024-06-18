@@ -6,8 +6,6 @@ import path from 'path';
 
 const PORT = process.env.PORT
 const __dirname = path.resolve();
-import fs from "fs";
-const productsRouter = fs.readFileSync("./src/router/productsRouter");
 
 
 app.use(morgan('combined'));

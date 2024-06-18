@@ -1,7 +1,9 @@
-const express = require('express');
-const productsRouter = express.Router();
+import express from "express";
 import fs from "fs";
-const products = JSON.parse(fs.readFileSync("../data/products.json"));
+
+const productsRouter = express.Router();
+
+const products = JSON.parse(fs.readFileSync("src/data/products.json"));
 
 productsRouter.route("/").get((req, res) => {
     res.render("products",{ 
@@ -17,4 +19,4 @@ productsRouter.route("/:id").get((req, res) => {
     })
 });
 
-module.exports = productsRouter;
+export default productsRouter;
