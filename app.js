@@ -3,10 +3,14 @@ import createDebug from 'debug'
 const debug = createDebug('app')
 import morgan from 'morgan';
 import path from 'path';
+import express from 'express';
+
+import productsRouter from "./src/router/productsRouter.mjs"
 
 const PORT = process.env.PORT
 const __dirname = path.resolve();
 
+const app = express();
 
 app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname, "/public/")))
